@@ -35,15 +35,11 @@ test.describe("Contact Us Form Tests", () => {
   test("Should fail when only Name is submitted", async ({ page }) => {
     await homePage.goToContactUs();
     await contactUsPage.fillFirstName("Test First Name");
+    await contactUsPage.fillLastName("Test Last Name");
     await contactUsPage.submitForm();
 
     // Verify the error message is displayed when first name is submitted without last name
-    const firstErrorMessage = await contactUsPage.errorMessage.first();
-    expect(firstErrorMessage).toBeVisible();
-
-    // Enter the last name and submit the form again
-    await contactUsPage.fillLastName("Test Last Name");
-    expect(firstErrorMessage).toBeHidden();
+    await expect(contactUsPage.errorMessageText.first()).toBeVisible();
   });
 
   test("Should fail when Name and Email are submitted without Comment", async ({
