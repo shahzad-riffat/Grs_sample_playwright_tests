@@ -8,7 +8,6 @@ export class ContactUsPage {
     readonly emailInput: Locator;
     readonly commentInput: Locator;
     readonly submitButton: Locator;
-    readonly errorMessage: Locator;
     readonly successMessage: Locator;
     readonly errorMessageText: Locator;
 
@@ -20,9 +19,7 @@ export class ContactUsPage {
         this.emailInput = this.iframe.getByLabel('Email *'); 
         this.commentInput = this.iframe.getByLabel('Comment or Message *'); 
         this.submitButton = this.iframe.getByRole('button', { name: 'Submit' }); 
-        this.errorMessage = this.iframe.locator('#error-Name'); 
         this.errorMessageText = this.iframe.getByText('Enter a value for this field.')
-        this.successMessage = this.iframe.locator('#error-Name'); 
     }
 
     async fillFirstName(name: string) {
@@ -44,13 +41,5 @@ export class ContactUsPage {
 
     async submitForm() {
         await this.submitButton.click();
-    }
-
-    async getErrorMessageNameMissing() {
-        return await this.errorMessage.first();
-    }
-
-    async getSuccessMessage() {
-        return await this.successMessage.textContent();
     }
 }
