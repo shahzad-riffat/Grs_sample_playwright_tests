@@ -1,7 +1,3 @@
-# Grs_sample_playwright_tests
-Sample UI tests for GRS
-
-[![Click me to get Video Framework Introduction and Sample tests explanation](https://drive.google.com/file/d/1jg5FcGFy067YCL-2AvGXAihHZY7dGnk1/view?usp=drive_link)](https://drive.google.com/file/d/1jg5FcGFy067YCL-2AvGXAihHZY7dGnk1/view?usp=drive_link)
 # How to Run tests:
 
 This project uses Playwright for end-to-end testing. Follow these instructions to install dependencies and run the tests.
